@@ -44,8 +44,8 @@
 static int lm_getArgs(lua_State *L, int start, Arg **args);
 static int get_type(const char *);
 
-extern struct luaL_Reg lm_gadgetConstructors[];
-extern struct luaL_Reg lm_widgetConstructors[];
+extern luaL_reg lm_gadgetConstructors[];
+extern luaL_reg lm_widgetConstructors[];
 
 extern struct str_constant motif_strings[];
 extern struct int_constant motif_ints[];
@@ -990,7 +990,7 @@ lm_set_info(lua_State *L) {
 }
 
 static void
-lm_register(lua_State *L, struct luaL_Reg *reg)
+lm_register(lua_State *L, luaL_reg *reg)
 {
 	while (reg->name != NULL) {
 		lua_pushcfunction(L, reg->func);
@@ -1417,7 +1417,7 @@ luaopen_motif(lua_State *L)
 {
 	int n;
 
-	struct luaL_Reg luamotif[] = {
+	luaL_reg luamotif[] = {
 		{ "AddInput",			lm_AddInput },
 		{ "Realize",			lm_Realize },
 		{ "Unrealize",			lm_Unrealize },
@@ -1427,7 +1427,7 @@ luaopen_motif(lua_State *L)
 		{ "SetLanguageProc",		lm_XtSetLanguageProc },
 		{ NULL, NULL }
 	};
-	struct luaL_Reg luaapp[] = {
+	luaL_reg luaapp[] = {
 		{ "__index",			lm_index },
 		{ "__newindex",			lm_newindex },
 
@@ -1479,7 +1479,7 @@ luaopen_motif(lua_State *L)
 		{ "SetSelection",		lm_SetSelection },
 		{ NULL,				NULL }
 	};
-	struct luaL_Reg luaXtApp[] = {
+	luaL_reg luaXtApp[] = {
 		{ "AddInput",			lm_AddInput },
 		{ "AddTimeOut",			lm_AddTimeOut },
 		{ "MainLoop",			lm_MainLoop },

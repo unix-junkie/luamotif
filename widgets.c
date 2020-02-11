@@ -121,7 +121,7 @@ lm_glDrawingArea(lua_State *L)
 }
 #endif
 
-struct luaL_Reg lm_gadgetConstructors[] = {
+luaL_reg lm_gadgetConstructors[] = {
 	{ "ArrowButtonGadget",	lm_ArrowButtonGadget },
 	{ "LabelGadget",	lm_LabelGadget },
 	{ "PushButtonGadget",	lm_PushButtonGadget },
@@ -130,7 +130,7 @@ struct luaL_Reg lm_gadgetConstructors[] = {
 	{ NULL,			NULL }
 };
 
-struct luaL_Reg lm_widgetConstructors[] = {
+luaL_reg lm_widgetConstructors[] = {
 #ifdef OPENGL
 	{ "glDrawingArea",	lm_glDrawingArea },
 #endif
