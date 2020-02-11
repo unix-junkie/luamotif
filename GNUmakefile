@@ -12,7 +12,7 @@ LIBDIR=		${PKGDIR}/lib
 LUADIR=		${LIBDIR}/lua/${LUAVER}
 
 ${LIB}.so:	${SRCS:.c=.o}
-	$(CC) -shared -o ${LIB}.so ${CFLAGS} ${SRCS:.c=.o} ${LDADD}
+	$(CC) -shared -o $@ ${CFLAGS} ${SRCS:.c=.o} ${LDADD}
 
 .PHONY: clean
 clean:
