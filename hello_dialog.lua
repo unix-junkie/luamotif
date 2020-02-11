@@ -1,3 +1,5 @@
+#!/usr/bin/lua
+
 local motif = require 'motif'
 
 function popup(button)

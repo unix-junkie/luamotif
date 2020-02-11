@@ -1,3 +1,5 @@
+#!/usr/bin/lua
+
 local motif = require 'motif'
 
 button = motif.PushButton {

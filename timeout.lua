@@ -1,3 +1,5 @@
+#!/usr/bin/lua
+
 -- Using timeouts in LuaMotif programs
 
 local motif = require 'motif'
